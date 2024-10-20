@@ -10,10 +10,10 @@ format:
 	cargo fmt --quiet
 
 lint:
-	cargo clippy --quiet
+	cargo clippy
 
 test:
-	cargo test --quiet
+	cargo test
 
 run:
 	cargo run
@@ -22,3 +22,10 @@ release:
 	cargo build --release
 
 all: format lint test run
+
+
+rust-setup:
+	cargo init --name=$(package_name)
+	touch src/lib.rs
+	mkdir tests
+	touch tests/test_lib.rs
